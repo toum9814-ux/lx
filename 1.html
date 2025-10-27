@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+  // 定义一个包含多个目标网址的数组
+  var urls = [
+    "https://www.example1.com",
+    "https://www.example2.com",
+    "https://www.example3.com"
+  ];
+
+  // 生成一个随机的索引
+  var randomIndex = Math.floor(Math.random() * urls.length);
+
+  // 获取随机的网址
+  var randomUrl = urls[randomIndex];
+
+  // 使用 window.location.href 进行跳转
+  window.location.href = randomUrl;
+</script>
+
+</body>
+</html>
