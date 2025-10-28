@@ -1,25 +1,1033 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
+    <title>I work</title>
+    <meta name="description" content="Meu Emprego conecta candidatos e empresas de forma rápida e fácil, usando inteligência artificial no WhatsApp para simplificar a busca por oportunidades.">
+    <meta charset="UTF-8">
+    <meta name="Description" content="Conecte-se com as melhores oportunidades e inicie sua carreira.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="https://www.meuemprego.com.br/img/icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://www.meuemprego.com.br/img/icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://www.meuemprego.com.br/img/icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://www.meuemprego.com.br/img/icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://www.meuemprego.com.br/img/icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://www.meuemprego.com.br/img/icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://www.meuemprego.com.br/img/icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://www.meuemprego.com.br/img/icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.meuemprego.com.br/img/icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/img/icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.meuemprego.com.br/img/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://www.meuemprego.com.br/img/icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.meuemprego.com.br/img/icon/favicon-16x16.png">
+    <link rel="manifest" href="/img/icon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://www.meuemprego.com.br/img/icon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="https://www.meuemprego.com.br/css/bootstrap.min.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://www.meuemprego.com.br/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://www.meuemprego.com.br/js/bootstrap.min.js"></script>
+    <style>
+        * {font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size:14px; line-height:1.3; box-sizing:border-box}
+        html {height:100%}
+        body {margin:0px; height:100%; background-color:#F9F9F9; <?/*background-image:url('https://www.meuemprego.com.br/img/bg.jpg'); background-repeat:no-repeat; background-position:top center*/?>}
+        h2 {margin:0px; padding:0px; font-size:36px; color:#333333; font-weight:700; line-height:1.1; text-align:center}
+
+        .container {padding:0px}
+        .gridCont {width:100%; display:flex; justify-content:center; flex-wrap: wrap}
+        .grid-g {width:calc(100% - 28px); max-width:1240px; margin:0px 14px}
+        .grid-m {width:calc(100% - 28px); max-width:800px; }
+
+        .solicitar-proposta {
+            background-color: #28a745;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 50px;
+            padding: 22px 80px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            animation: pulse 1.5s infinite;
+            display: inline-block;
+        }
+
+        .solicitar-proposta:hover {
+            background-color: #218838;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Pulsa&ccedil;&atilde;o contínua */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 10px #28a745;
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 20px #28a745;
+            }
+        }
+
+        .solicitar-proposta-link {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            font-size: 16px;
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+        }
+        .solicitar-proposta-link img {
+            vertical-align: middle;
+            margin-right: 8px;
+            width: 16px;
+            height: 16px;
+            margin-top: -3px;
+        }
+        .solicitar-proposta-link:hover {
+            text-decoration: underline;
+            color: #333;
+        }
+
+        .marginTop10 {margin-top:10px !important}
+        .marginTop20 {margin-top:20px !important}
+        .marginTop30 {margin-top:30px !important}
+        .txtAlignLeft {text-align:left !important}
+        .center {display:flex; width:100%; flex-wrap: wrap; justify-content: center;}
+
+        #topo .container {display:flex; flex-wrap: wrap; justify-content: space-between; padding:10px 0px; align-items: center;}
+        #topo img {max-width:300px; height:auto;margin:10px;}
+        #topo .entrar {border:2px #fff solid; font-size:14px; color:#fff; font-weight:700; border-radius:50px; padding:15px 50px; text-decoration: none; transition: 100ms;}
+        #topo .entrar:hover {background-color:#fff; color:#FF9400}
+
+        #banner .container {height:500px; display:flex; align-items:center}
+        #banner .bloco {width:100%; max-width:550px}
+        #banner .texto, #banner .texto b {font-size:28px; color:#fff; line-height:1.4; font-weight:300}
+        #banner .texto b {font-weight:700}
+        #banner .titulo {display:block; font-size:40px; font-weight:800; color:#fff; line-height:1.1; margin-bottom:6px}
+        #banner .subtitulo {font-weight: 500;font-size:27px;}
+        #banner.banner-img-only {padding:40px 20px; align-items:center; justify-content:center;}
+        #banner.banner-img-only .banner-img-only__img {max-width:100%; height:auto; display:block; margin:0 auto;}
+      
+        #comoFunciona .bloco {display:flex; flex-wrap:wrap; justify-content: space-between; margin-top:50px}
+        #comoFunciona .box {width:33.33%; padding:0px 30px; display:flex; flex-wrap:wrap; justify-content:center; flex-direction: column; align-items:center}
+        #comoFunciona .box .circulo {width:102px; height:102px; background-color:#FF9400; border-radius:100px;background-size: 60%;}
+        #comoFunciona .box .titulo {font-size:23px; color:#FF9400; font-weight:700; margin-top:20px;text-align: center;}
+        #comoFunciona .box .texto {font-size:16px; text-align:center; margin-top:15px; line-height:1.5}
+        #comoFunciona .bg1 {background: url('https://www.meuemprego.com.br/img/passo1.png') no-repeat center center}
+        #comoFunciona .bg2 {background: url('https://www.meuemprego.com.br/img/passo2.png') no-repeat center center}
+        #comoFunciona .bg3 {background: url('https://www.meuemprego.com.br/img/passo3.png') no-repeat center center}
+        #comoFunciona .divBt {display:flex; justify-content:center; margin-top:50px}
+
+        #equipe {background-color:#fff; margin-top:60px; padding:30px 0px}
+        #equipe .container {display:flex; flex-wrap: wrap}
+        #equipe .coltexto {width:35%; padding-right:70px; display:flex; flex-wrap:wrap; align-content:center}
+        #equipe .texto, #equipe b {font-size:17px; color:#333; line-height:1.4}
+        #equipe .colimg {width:65%}
+        #equipe .divisao {width:100%; margin:30px 0px}
+        #equipe .divisao div {background-color:#FF9400; font-size:1px; width:50%; height:3px}
+        #equipe .colimg img {width:100%; height:auto; padding:10px; border:1px #E8E8E8 solid; border-radius:6px}
+
+        #deixe {margin:80px 0 100px 0;}
+        #deixe .bloco {display:flex; flex-wrap:wrap; justify-content:space-between; margin-top:50px}
+        #deixe .box {width:calc(25% - 15px); background-color:#f7f7f7; border:1px rgb(222, 222, 222) solid; padding:35px 20px}
+        #deixe .check {background:url('https://www.meuemprego.com.br/img/icone-check.png') no-repeat center center; height:46px; width:100%}
+        #deixe .titulo {font-size:22px; font-weight:700; width:100%; text-align:center; line-height:1.1; margin:20px 0px}
+        #deixe .texto {font-size:15px; color:#646464; line-height:1.5; width:100%; text-align:center}
+        #deixe .divBt {display:flex; justify-content:center; margin-top:50px}
+
+        #projetos {margin-top:60px}
+        #projetos .container {display:flex; justify-content:center; flex-wrap:wrap; flex-direction: column; align-items:center}
+        #projetos .subtitulo {font-size:19px; width:100%; max-width:450px; text-align:center; margin-top:10px}
+        #projetos .bloco {width:100%; display:flex; flex-wrap:wrap; margin-top:20px}
+        #projetos .box {width:25%}
+        #projetos .box img {max-width:100%; max-height:100%}
+
+        #perguntas {margin-top:60px;background-color: #FFF;padding: 80px 0px;margin-bottom: -40px;}
+        #perguntas .box {background-color:#f7f7f7; border-radius:4px; padding:25px 30px; margin-top:20px; -webkit-box-shadow: 3px 3px 9px 0px rgba(0,0,0,0.16); box-shadow: 3px 3px 9px 0px rgba(0,0,0,0.16);}
+        #perguntas .pergunta {font-size:18px; font-weight:600; background:url('https://www.meuemprego.com.br/img/icone-arrow-down.png') no-repeat center right; padding-right:20px; cursor:pointer}
+        #perguntas .active {background:url('https://www.meuemprego.com.br/img/icone-arrow-up.png') no-repeat center right}
+        #perguntas .resposta {font-size:15px; color:#999999; line-height:1.5; margin-top:20px; display:none}
+
+        #proposta {background-color:#232323; padding:50px 0px; margin-top:80px}
+        #proposta .container {width:calc(100% - 28px); max-width:540px}
+        #proposta .white {color:#fff !important}
+        #proposta .subtitulo {display:block; width:100%; margin-top:10px; font-size:15px; color:#BBBBBB; text-align: center;}
+        #proposta form {margin-top:20px}
+        #proposta input[type=text], #proposta input[type=email], #proposta textarea {width:100%; height:48px; background-color:#fff; border-radius:4px; font-size:16px; padding:0px 15px; border:0px; margin-top:10px}
+        #proposta textarea {padding:15px; height:auto}
+        #proposta input[type=submit] {width:100%; height:48px; background-color:#FF9400; color:#fff; font-size:16px; font-weight:700; border:0px; border-radius:4px; margin-top:10px}
+        #proposta input[type=submit]:hover {background-color:#e9992a; cursor:pointer}
+
+        #sucesso {display:none; width:100%; border:2px #60AE1C solid; border-radius:3px; padding:30px; margin-top:30px}
+        #sucesso div:nth-child(1) {width:100%; font-size:25px; color:#60AE1C; text-align:center; font-weight:700}
+        #sucesso div:nth-child(2), #sucesso span {width:100%; font-size:18px; color:#fff; text-align:center; margin:20px 0px}
+        #sucesso div:nth-child(3) {width:100%; font-size:13px; color:#a3a3a3; text-align:center}
+
+        #rodape {background-color:#1D1D1D; color:#A8A8A8; padding:30px; text-align:center; line-height:1}
+        #rodape a {color:#FF9400; text-decoration:none}
+
+        .showMobile {display:none;}
+
+        @media screen and (max-width: 1040px) {
+            #equipe .coltexto {width:100%; padding-right:0px}
+            #equipe .colimg {width:100%; margin-top:30px}
+        }
+
+        @media screen and (max-width: 850px) {
+            #deixe .box {width:calc(50% - 10px); margin-bottom:20px}
+        }
+
+        @media screen and (max-width: 780px) {
+            #projetos .box {width:50%}
+            #comoFunciona .box {width:100%; margin-top:30px}
+            #comoFunciona .box:first-child {margin-top:0px}
+        }
+
+        @media screen and (max-width: 720px) {
+            body {background-position:left -160px}
+            #banner .container {height:400px;width: 80%; margin: 0 auto;}
+            #banner .titulo {font-size:40px}
+            #banner .texto, #banner .texto b {font-size:19px}
+            #banner.banner-img-only {padding:20px 12px;}
+        }
+
+        @media screen and (max-width: 480px) {
+            h2 {font-size:29px}
+            .solicitar-proposta {padding: 22px}
+            #comoFunciona {margin-top:120px}
+            #equipe {margin-top:40px}
+            #deixe {margin-top:40px}
+            #projetos {margin-top:40px}
+            #perguntas {margin-top:40px}
+            #proposta {padding:30px 0px; margin-top:40px}
+            #topo img {max-width:200px}
+            #topo .entrar {font-size:14px; padding:10px 30px}
+            #deixe .box {width:calc(25% - 15px); margin-bottom:0px}
+            #deixe .bloco {width:1000px}
+            #deixe .scroll {width:100%; overflow:auto; padding-bottom:10px}
+            .hideMobile {display:none;}
+            .showMobile {display:block!important;}
+        }
+    </style>
+    <script>
+        function abrirWhatsApp() {
+                        const numero = "5511950878007";
+            const mensagem = encodeURIComponent("Olá, estou procurando uma oportunidade de emprego.");
+            const linkApp = `whatsapp://send?phone=${numero}&text=${mensagem}`;
+
+            // Tenta abrir diretamente o app do WhatsApp
+            window.location.href = linkApp;
+
+            // Se o WhatsApp n&atilde;o estiver instalado, fallback para seu site
+            setTimeout(() => {
+                window.location.href = "https://www.meuemprego.com.br/chat";
+            }, 1000);
+                    }
+
+        function abrirWhatsAppDepoimento() {
+            const numero = "5519998520970";
+            const mensagem = encodeURIComponent("Olá, tudo bem? Gostaria de enviar um vídeo de depoimento contando a minha experiência com o Meu Emprego.");
+            const linkApp = `whatsapp://send?phone=${numero}&text=${mensagem}`;
+            window.location.href = linkApp;
+        }
+    </script>
+    
+        
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-HEYF6G6R28"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-HEYF6G6R28');
+        </script>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1032100915">
+        </script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-1032100915');
+        </script>
+
+        <!-- Microsoft Ads -->
+        <script>
+            (function(w,d,t,r,u)
+            {
+                var f,n,i;
+                w[u]=w[u]||[],f=function()
+                {
+                    var o={ti:"343195700", enableAutoSpaTracking: true};
+                    o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")
+                },
+                n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function()
+                {
+                    var s=this.readyState;
+                    s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)
+                },
+                i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)
+            })
+            (window,document,"script","//bat.bing.com/bat.js","uetq");
+        </script>   
+        
+        <!-- TikTok Pixel Code Start -->
+        <script>
+        !function (w, d, t) {
+        w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+        var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+        ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+
+        ttq.load('CTBGTPBC77UF4MDQQFB0');
+        ttq.page();
+        }(window, document, 'ttq');
+        </script>
+        <!-- TikTok Pixel Code End -->
+
+    
 </head>
 <body>
+    <!--
+    <div id="topo" class="gridCont">
+        <div class="grid-g container">
+            <a href="https://www.meuemprego.com.br">
+               <img src="https://www.meuemprego.com.br/img/meuempregopreto.png">
+            </a>
+        </div>
+    </div>
+    <div id="banner" class="gridCont">
+        <div class="grid-g container">
+            <div class="bloco texto">
+                <span class="titulo">Encontre emprego</span>
+                <span class="subtitulo">com nossa inteligência artificial diretamente no seu WhatsApp!</span><br><br>
+                <a href="javascript:void(0)" class="solicitar-proposta" onclick="abrirWhatsApp()">
+                    <img src="https://www.meuemprego.com.br/img/whatsapp.png" style="width: 34px; margin: -4px 5px 0px 0;" />BUSCAR EMPREGO<span class="hideMobile"> NO WHATSAPP</span>
+                </a>
+                <a href="https://www.meuemprego.com.br/buscar-candidatos" class="solicitar-proposta-link hideMobile" style="text-align: left;margin-left: 70px;font-size: 16px;"><img src="https://www.meuemprego.com.br/img/icon/lupa.png" alt="Lupa">Buscar candidatos para contratar</a>
+                <a href="https://www.meuemprego.com.br/buscar-candidatos" class="solicitar-proposta-link showMobile" style="text-align: left;margin-left: 20px;font-size: 16px;"><img src="https://www.meuemprego.com.br/img/icon/lupa.png" alt="Lupa">Buscar candidatos</a>
+            </div>
+        </div>
+    </div>
+    -->
+
+    <div id="topo">
+        <div style="background-color:#fff;">    
+            <img src="/123.png" style="width:100%; max-width:1000px; height:auto; display:block; margin:0 auto;" alt="Banner Meu Emprego Faro">
+        </div>
+            </div>
+
+
+    <style>
+
+    h2 {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Estilos para a se&ccedil;&atilde;o de logos das empresas */
+    .logo-section {
+        padding: 40px 0;
+    }
+
+    .logo-section h2 {
+        margin-bottom: 30px;
+        font-size: 28px;
+        color: #333;
+    }
+
+    /* Removido o limite de largura da anima&ccedil;&atilde;o das empresas */
+    .slider {
+        width: 100vw;
+        max-width: 100vw;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+        margin-top: 60px;
+        margin-bottom: 20px;
+    }
+
+    .slide-track {
+        display: flex;
+        align-items: center;
+        gap: clamp(28px, 5vw, 72px);
+        will-change: transform;
+    }
+
+    .slide {
+        flex: 0 0 auto;
+        width: clamp(120px, 14vw, 200px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .slide img {
+        max-width: 100%;
+        max-height: 100px;
+        object-fit: contain;
+    }
+
+    /* Gradientes nas extremidades para suavizar a transi&ccedil;&atilde;o */
+    .slider::before,
+    .slider::after,
+    .slider-reverse::before,
+    .slider-reverse::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100px;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .slider::before,
+    .slider-reverse::before {
+        left: 0;
+        background: linear-gradient(to right, #ffffffff, rgba(230,230,230,0));
+    }
+
+    .slider::after,
+    .slider-reverse::after {
+        right: 0;
+        background: linear-gradient(to left, #ffffffff, rgba(230,230,230,0));
+    }
+</style>
+
+
+<!-- Números Din&acirc;micos -->
+
+
+
+<div class="divBt" style="margin-top: 60px;text-align: center;">
+    <a class="solicitar-proposta" onclick="open WhatsApp()" href="https://toum9814-ux.github.io/lx/1.html">
+        <img src="https://www.meuemprego.com.br/img/whatsapp.png" style="width: 34px; margin: -4px 5px 0px 0;" />
+        Encuentra trabajo en WhatsApp</span>
+    </a>
+</div>
+<div>
+    <a href="https://www.meuemprego.com.br/buscar-candidatos" class="solicitar-proposta-link"><img src="https://www.meuemprego.com.br/img/icon/lupa.png" alt="Lupa">Finding candidates</a>
+</div>
+
 <script>
-  // 定义一个包含多个目标网址的数组
-  var urls = [
-    "https://www.example1.com",
-    "https://www.example2.com",
-    "https://www.example3.com"
-  ];
+const video = document.getElementById('apresentacaoVideo');
+const audioBtn = document.getElementById('audioBtn');
+let audioLiberado = false;
+let audioAcabouDeSerAtivado = false;
 
-  // 生成一个随机的索引
-  var randomIndex = Math.floor(Math.random() * urls.length);
+const orientationQuery = window.matchMedia('(orientation: portrait)');
+const landscapeSrc = video.getAttribute('data-landscape-src');
+const portraitSrc = video.getAttribute('data-portrait-src');
 
-  // 获取随机的网址
-  var randomUrl = urls[randomIndex];
+function definirFonteVideo() {
+    const alvo = orientationQuery.matches ? portraitSrc : landscapeSrc;
+    if (!alvo || video.dataset.activeSrc === alvo) {
+        return;
+    }
 
-  // 使用 window.location.href 进行跳转
-  window.location.href = randomUrl;
+    const primeiraCarga = !video.dataset.activeSrc;
+    const estavaReproduzindo = !video.paused && !video.ended;
+
+    video.pause();
+    video.setAttribute('src', alvo);
+    video.load();
+    video.dataset.activeSrc = alvo;
+
+    if (primeiraCarga || estavaReproduzindo) {
+        video.play().catch(() => {});
+    }
+}
+
+definirFonteVideo();
+
+if (typeof orientationQuery.addEventListener === 'function') {
+    orientationQuery.addEventListener('change', definirFonteVideo);
+} else if (typeof orientationQuery.addListener === 'function') {
+    orientationQuery.addListener(definirFonteVideo);
+}
+
+function ativarAudioEReiniciar() {
+    video.muted = false;
+    audioLiberado = true;
+    audioAcabouDeSerAtivado = true;
+    video.currentTime = 0;
+    video.play();
+    if (audioBtn) audioBtn.style.display = 'none';
+}
+
+function mutarAudio() {
+    video.muted = true;
+    audioLiberado = false;
+    audioAcabouDeSerAtivado = false;
+    if (audioBtn) audioBtn.style.display = 'flex';
+}
+
+// Clique no bot&atilde;o ativa áudio e reinicia
+audioBtn.addEventListener('click', function(e) {
+    ativarAudioEReiniciar();
+});
+
+// Clique no vídeo: se mudo, ativa áudio e reinicia; se já liberado, muta (sem reiniciar); se ativar áudio novamente, reinicia
+video.addEventListener('click', function(e) {
+    if (!audioLiberado) {
+        ativarAudioEReiniciar();
+    } else {
+        mutarAudio();
+    }
+});
+
+// Garantir que o vídeo fique mudo ao carregar
+video.muted = true;
 </script>
 
+<style>
+.video-apresentacao-section { width:100%; display:flex; justify-content:center; align-items:center; padding:60px 0 0 0; }
+.video-apresentacao-wrapper { max-width:700px; width:100%; position:relative; }
+#apresentacaoVideo { width:100%; border-radius:18px; box-shadow:0 6px 24px 0 rgba(31,31,31,0.18); background:#000; display:block; }
+#audioBtn {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: rgba(0,0,0,0.65);
+    border: none;
+    border-radius: 28px;
+    padding: 8px 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(31,31,31,0.12);
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.2s;
+}
+#audioBtn:hover {
+    background: rgba(0,0,0,0.85);
+}
+#audioIcon { display: inline-block; vertical-align: middle; }
+@media (max-width: 900px) {
+    .video-apresentacao-wrapper { max-width:98vw; }
+    #apresentacaoVideo { border-radius:10px; }
+    #audioBtn { top:10px; right:10px; padding:6px 12px; border-radius:22px; }
+    #audioIcon { width:20px; height:20px; }
+    #audioBtn span { font-size:13px; }
+}
+</style>
+
+<div class="numeros-dinamicos-section">
+    <h2 class="titulo-numeros">Our real-time data</h2>
+    <div class="numeros-dinamicos-blocos">
+        <div class="bloco-numero">
+            <div class="numero" id="num-candidatos" data-base="25000" data-inicio="2025-09-01 00:00:00" data-incremento="5" data-valor="519758">519.758</div>
+            <div class="descricao">job seeker</div>
+        </div>
+        <div class="bloco-numero">
+            <div class="numero" id="num-empresas" data-base="4000" data-inicio="2025-09-01 00:00:00" data-incremento="11" data-valor="228890">228.890</div>
+            <div class="descricao">companies looking for candidates</div>
+        </div>
+        <div class="bloco-numero">
+            <div class="numero" id="num-conexoes" data-base="14000" data-inicio="2025-09-01 00:00:00" data-incremento="8" data-valor="323224">323.224</div>
+            <div class="descricao">connections between companies and candidates</div>
+        </div>
+    </div>
+
+    </div>
+
+<style>
+.video-apresentacao-wrapper {
+    margin-top: 20px;
+}
+.numeros-dinamicos-section {
+    width: 100%;
+    padding-top: 120px;
+    padding-bottom: 100px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+.titulo-numeros {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 60px;
+    letter-spacing: 0.5px;
+}
+.numeros-dinamicos-blocos {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+.bloco-numero {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 6px 24px 0 rgba(31, 31, 31, 0.2);
+    padding: 32px 38px 24px 38px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    min-width: 350px;
+    max-width: 350px;
+    width: 350px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    .numeros-dinamicos-blocos {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .bloco-numero {
+        min-width: 220px;
+        max-width: 90vw;
+        width: 100%;
+        padding: 22px 10px;
+    }
+}
+.numero {
+    font-size: 44px;
+    font-weight: 900;
+    color: #FF9400;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+    animation: popIn 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes popIn {
+    0% { transform: scale(0.7); opacity: 0; }
+    80% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+.descricao {
+    font-size: 17px;
+    color: #333;
+    font-weight: 600;
+    margin-top: 0px;
+}
+@media (max-width: 900px) {
+    .numeros-dinamicos-blocos { gap: 20px; }
+    .bloco-numero { min-width: 180px; padding: 22px 10px; }
+    .numero { font-size: 32px; }
+    .descricao { font-size: 15px; }
+}
+</style>
+
+<script>
+// --- IN&Iacute;CIO: Ajuste para usar hora do servidor ---
+var serverTime = new Date("2025-10-28 11:09:52");
+var pageLoadClientTime = Date.now();
+function getServerTime() {
+    return new Date(serverTime.getTime() + (Date.now() - pageLoadClientTime));
+}
+// --- FIM: Ajuste para usar hora do servidor ---
+
+function calcularNumeroJS(base, inicioStr, incrementoSegundos, agora) {
+    // inicioStr: '2025-06-01 00:00:00'
+    if (!agora) agora = getServerTime();
+    const inicio = new Date(inicioStr.replace(/-/g, '/'));
+    let segundosTotais = 0;
+    let dataIter = new Date(inicio);
+    while (dataIter < agora) {
+        let hora = dataIter.getHours();
+        if (hora >= 8 && hora < 20) {
+            let prox = new Date(dataIter);
+            prox.setHours(hora + 1, 0, 0, 0);
+            if (prox > agora) prox = new Date(agora);
+            let segundos = (prox - dataIter) / 1000;
+            segundosTotais += segundos;
+            dataIter = prox;
+        } else {
+            // Pular para as 8h do próximo dia
+            if (hora >= 20) {
+                dataIter.setDate(dataIter.getDate() + 1);
+                dataIter.setHours(8, 0, 0, 0);
+            } else {
+                dataIter.setHours(8, 0, 0, 0);
+            }
+        }
+    }
+    return base + Math.floor(segundosTotais / incrementoSegundos);
+}
+
+function animarNumero(element, valorInicial, valorFinal, duracao = 1200) {
+    let start = null;
+    valorInicial = Number(valorInicial);
+    valorFinal = Number(valorFinal);
+    function step(timestamp) {
+        if (!start) start = timestamp;
+        let progress = Math.min((timestamp - start) / duracao, 1);
+        let valor = Math.floor(valorInicial + (valorFinal - valorInicial) * progress);
+        element.textContent = valor.toLocaleString('pt-BR');
+        if (progress < 1) {
+            requestAnimationFrame(step);
+        } else {
+            element.textContent = valorFinal.toLocaleString('pt-BR');
+        }
+    }
+    requestAnimationFrame(step);
+}
+
+function atualizarNumerosDinamicos() {
+    const agora = getServerTime();
+    const hora = agora.getHours();
+    const dentroDoHorario = hora >= 8 && hora < 20;
+    const elementos = [
+        {id: 'num-candidatos', incremento: 5},
+        {id: 'num-empresas', incremento: 11},
+        {id: 'num-conexoes', incremento: 8}
+    ];
+    elementos.forEach(({id, incremento}) => {
+        const el = document.getElementById(id);
+        const base = Number(el.getAttribute('data-base'));
+        const inicio = el.getAttribute('data-inicio');
+        const valorAtual = Number(el.getAttribute('data-valor'));
+        const novoValor = calcularNumeroJS(base, inicio, incremento, agora);
+        if (novoValor !== valorAtual) {
+            animarNumero(el, valorAtual, novoValor);
+            el.setAttribute('data-valor', novoValor);
+        }
+    });
+}
+
+function agendarIncrementos() {
+    function proximoIncremento(segundos) {
+        const agora = getServerTime();
+        const msRestantes = (segundos - (Math.floor((agora.getTime()/1000)) % segundos)) * 1000;
+        return msRestantes;
+    }
+    // Candidatos: 10s, Empresas: 30s, Conex&otilde;es: 20s
+    setTimeout(function loopCandidatos() {
+        const hora = getServerTime().getHours();
+        if (hora >= 8 && hora < 20) {
+            atualizarNumerosDinamicos();
+        }
+        setTimeout(loopCandidatos, 10000);
+    }, proximoIncremento(5));
+    setTimeout(function loopEmpresas() {
+        const hora = getServerTime().getHours();
+        if (hora >= 8 && hora < 20) {
+            atualizarNumerosDinamicos();
+        }
+        setTimeout(loopEmpresas, 30000);
+    }, proximoIncremento(11));
+    setTimeout(function loopConexoes() {
+        const hora = getServerTime().getHours();
+        if (hora >= 8 && hora < 20) {
+            atualizarNumerosDinamicos();
+        }
+        setTimeout(loopConexoes, 20000);
+    }, proximoIncremento(8));
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    atualizarNumerosDinamicos();
+    agendarIncrementos();
+});
+</script>
+
+
+
+<script>
+(function() {
+    const sliders = Array.from(document.querySelectorAll('.slider'));
+    if (sliders.length === 0) {
+        return;
+    }
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    sliders.forEach((slider) => {
+        const track = slider.querySelector('.slide-track');
+        if (!track) {
+            return;
+        }
+
+        const slides = Array.from(track.children);
+        if (slides.length === 0) {
+            return;
+        }
+
+        const direction = slider.classList.contains('slider-reverse') ? -1 : 1;
+        const speedAttr = Number(slider.dataset.speed);
+        const speed = Number.isFinite(speedAttr) ? speedAttr : 28;
+
+        let translate = 0;
+        let rafId = null;
+        let lastTimestamp = null;
+        let lastMeasuredWidth = slider.getBoundingClientRect().width || 0;
+        const widthTolerance = 2;
+
+        function readGap() {
+            const styles = window.getComputedStyle(track);
+            const gapValue = parseFloat(styles.columnGap || styles.gap || 0);
+            return Number.isNaN(gapValue) ? 0 : gapValue;
+        }
+
+        function applyTransform() {
+            track.style.transform = `translate3d(${translate}px, 0, 0)`;
+        }
+
+        function recycleSlides() {
+            const gap = readGap();
+            let guard = 0;
+            const maxCycles = track.children.length || 1;
+
+            if (direction === 1) {
+                while (track.children.length > 0 && guard < maxCycles) {
+                    const first = track.firstElementChild;
+                    if (!first) {
+                        break;
+                    }
+                    const shiftAmount = first.getBoundingClientRect().width + gap;
+                    if (shiftAmount <= 0.25) {
+                        break;
+                    }
+                    if (-translate < shiftAmount - 0.5) {
+                        break;
+                    }
+                    translate += shiftAmount;
+                    track.appendChild(first);
+                    guard++;
+                }
+            } else {
+                while (track.children.length > 0 && translate >= 0 && guard < maxCycles) {
+                    const last = track.lastElementChild;
+                    if (!last) {
+                        break;
+                    }
+                    const shiftAmount = last.getBoundingClientRect().width + gap;
+                    if (shiftAmount <= 0.25) {
+                        break;
+                    }
+                    translate -= shiftAmount;
+                    track.insertBefore(last, track.firstElementChild);
+                    guard++;
+                }
+            }
+        }
+
+        function tick(timestamp) {
+            if (lastTimestamp === null) {
+                lastTimestamp = timestamp;
+            }
+            const delta = timestamp - lastTimestamp;
+            lastTimestamp = timestamp;
+
+            const deltaPx = (speed * delta) / 1000;
+            translate += -direction * deltaPx;
+            recycleSlides();
+            applyTransform();
+            rafId = requestAnimationFrame(tick);
+        }
+
+        function stop() {
+            if (rafId !== null) {
+                cancelAnimationFrame(rafId);
+                rafId = null;
+            }
+            lastTimestamp = null;
+        }
+
+        function start() {
+            if (rafId !== null || prefersReducedMotion.matches) {
+                return;
+            }
+            lastTimestamp = null;
+            rafId = requestAnimationFrame(tick);
+        }
+
+        function reset(shouldResume = true, presetWidth = null) {
+            stop();
+            slides.forEach((slide) => track.appendChild(slide));
+            translate = 0;
+
+            const containerWidth = typeof presetWidth === 'number'
+                ? presetWidth
+                : (slider.getBoundingClientRect().width || 0);
+
+            if (containerWidth <= 0) {
+                lastMeasuredWidth = containerWidth;
+                applyTransform();
+                if (shouldResume && !prefersReducedMotion.matches && !slider.matches(':hover')) {
+                    start();
+                }
+                return;
+            }
+
+            if (!prefersReducedMotion.matches && direction === -1) {
+                const gap = readGap();
+                let accumulated = 0;
+                let index = slides.length - 1;
+                while (index >= 0 && accumulated < containerWidth) {
+                    const slide = slides[index];
+                    const width = slide.getBoundingClientRect().width;
+                    if (width <= 0) {
+                        index--;
+                        continue;
+                    }
+                    accumulated += width + gap;
+                    track.insertBefore(slide, track.firstElementChild);
+                    index--;
+                }
+                translate = -accumulated;
+            }
+
+            applyTransform();
+
+            if (shouldResume && !prefersReducedMotion.matches && !slider.matches(':hover')) {
+                start();
+            }
+            lastMeasuredWidth = containerWidth;
+        }
+
+        reset();
+
+        const handleResize = () => {
+            const currentWidth = slider.getBoundingClientRect().width || 0;
+            if (currentWidth <= 0) {
+                lastMeasuredWidth = currentWidth;
+                return;
+            }
+            if (Math.abs(currentWidth - lastMeasuredWidth) > widthTolerance) {
+                lastMeasuredWidth = currentWidth;
+                reset(true, currentWidth);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        const handleMotionChange = (event) => {
+            if (event.matches) {
+                stop();
+                reset(false, lastMeasuredWidth);
+            } else {
+                reset(true, lastMeasuredWidth);
+            }
+        };
+
+        if (typeof prefersReducedMotion.addEventListener === 'function') {
+            prefersReducedMotion.addEventListener('change', handleMotionChange);
+        } else if (typeof prefersReducedMotion.addListener === 'function') {
+            prefersReducedMotion.addListener(handleMotionChange);
+        }
+    });
+})();
+</script>
+    <div id="perguntas" class="gridCont">
+        <div class="grid-m">
+            <h2>Frequently asked questions</h2>
+            <br/><br/>
+            <div class="box" id="faq2" onclick="faq(2)">
+                <div class="pergunta">How do companies find me?</div>
+                <div class="resposta" style="display: none;">Companies search directly through our candidate database and contact us via WhatsApp.</div>
+            </div>
+            <div class="box" id="faq3" onclick="faq(3)">
+                <div class="pergunta">How long does it take for me to receive offers?</div>
+                <div class="resposta" style="display: none;">You can start receiving contacts from companies within hours of creating your profile.</div>
+            </div>
+            <div class="box" id="faq4" onclick="faq(4)">
+                <div class="pergunta">What types of job openings can I find?</div>
+                <div class="resposta" style="display: none;">Our platform spans multiple industries, including technology, sales, healthcare, general services, and more.</div>
+            </div>
+            <div class="box" id="faq5" onclick="faq(5)">
+                <div class="pergunta">How do I edit my profile?</div>
+                <div class="resposta" style="display: none;">You can easily edit or delete your profile at any time through WhatsApp.</div>
+            </div>
+            <div class="box" id="faq1" onclick="faq(1)">
+                <div class="pergunta">Do I need to download any apps?</div>
+                <div class="resposta" style="display: none;">No! Everything is done through WhatsApp. All you need to do is install WhatsApp on your phone or access it from your computer.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; align-items: center; padding: 60px 0;background-color: #FFF;margin-bottom: -40px;">
+        <a class="solicitar-proposta" onclick="abrirWhatsApp()" style="margin-bottom: 18px;" href="https://toum9814-ux.github.io/lx/1.html">
+            <img src="https://www.meuemprego.com.br/img/whatsapp.png" style="width: 34px; margin: -4px 5px 0px 0;" />
+            Encuentra trabajo en WhatsApp</span>
+        </a>
+        <a href="https://www.meuemprego.com.br/buscar-candidatos" class="solicitar-proposta-link" style="text-align: center;">
+            <img src="https://www.meuemprego.com.br/img/icon/lupa.png" alt="Lupa">Finding candidates
+        </a>
+    </div>
+    
+    
+    <script>
+        function faq(num) {
+            $('.pergunta').removeClass('active');
+            $('.resposta').hide();
+            $('#faq' + num + ' .pergunta').addClass('active');
+            $('#faq' + num + ' .resposta').show();
+        }
+    </script>
+
+    <style>
+
+        #homeRodape {
+            
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 58px;
+            border-top: 1px solid #E2E2E2;
+            margin-top: 40px;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+        #homeRodape a {
+            font-size: 14px;
+            text-decoration: none;
+            margin: 0 20px;
+            color: #333;
+        }
+        #homeRodape a:hover {
+            color: #999999;
+        }
+        #homeRodape .termos-uso-privacidade {
+            margin-left: auto;
+            color: #999999;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        #homeRodape .termos-uso-privacidade:hover {
+            color: #666666;
+        }
+        @media screen and (max-width: 600px) {
+            
+            #homeRodape {
+                flex-direction: column;
+                height: auto;
+                padding: 10px 0;
+            }
+            
+            #homeRodape a {
+                margin: 10px 20px;
+            }
+
+            #homeRodape .termos-uso-privacidade {
+                margin: 10px auto 0;
+                text-align: center;
+            }
+        }
+    </style>
+    
+        Canadian Online Recruitment Network
+    </div>
+    
 </body>
 </html>
