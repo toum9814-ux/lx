@@ -4,34 +4,51 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Online Part-Time Job in Canada | Apply via WhatsApp</title>
-  <meta name="description" content="Flexible online part-time job in Canada. Earn daily income and apply directly via WhatsApp. No fees, work remotely." />
+  <meta name="description" content="Flexible online job in Canada. Apply directly via WhatsApp. No fees, remote work opportunity.">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Arial, sans-serif;
       margin: 0;
-      background: #f6f8fa;
+      background: #f8fafc;
       color: #333;
-      line-height: 1.6;
     }
     header {
-      background: #0366d6;
-      color: white;
+      position: relative;
       text-align: center;
-      padding: 1.5rem;
+      color: white;
+    }
+    header img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      filter: brightness(65%);
+    }
+    header .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    header h1 {
+      font-size: 2rem;
+      margin: 0;
     }
     main {
       max-width: 800px;
       margin: 2rem auto;
+      background: #fff;
       padding: 2rem;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    h1, h2 {
+    h2 {
       color: #0366d6;
     }
-    p {
-      margin-bottom: 1rem;
+    .job-image {
+      display: block;
+      width: 100%;
+      border-radius: 8px;
+      margin: 1rem 0;
     }
     .apply-btn {
       display: inline-block;
@@ -40,30 +57,27 @@
       text-decoration: none;
       font-size: 1.2rem;
       font-weight: bold;
-      padding: 0.75rem 1.5rem;
-      border-radius: 6px;
+      padding: 0.8rem 1.6rem;
+      border-radius: 8px;
       transition: background 0.3s;
     }
     .apply-btn:hover {
-      background: #20b358;
+      background: #1ebe5b;
     }
     footer {
       text-align: center;
-      font-size: 0.9rem;
       color: #666;
+      font-size: 0.9rem;
       padding: 1rem;
     }
   </style>
 
   <script>
-    // WhatsApp 联系方式列表
     const whatsappLinks = [
       "https://wa.me/11234567890",
       "https://wa.me/19876543210",
       "https://wa.me/14165550123"
     ];
-
-    // 随机选择一个号码并跳转
     window.onload = () => {
       const randomLink = whatsappLinks[Math.floor(Math.random() * whatsappLinks.length)];
       document.getElementById("apply-btn").href = randomLink;
@@ -73,21 +87,25 @@
 
 <body>
   <header>
-    <h1>Online Part-Time Job in Canada</h1>
-    <p>Work remotely · Flexible schedule · Daily earnings</p>
+    <img src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&fit=crop&w=1350&q=80" alt="Remote Work in Canada">
+    <div class="text">
+      <h1>Online Part-Time Job in Canada</h1>
+      <p>Work remotely · Flexible hours · Earn daily income</p>
+    </div>
   </header>
 
   <main>
     <section>
       <h2>Job Overview</h2>
-      <p>We are looking for online assistants and data handlers who can work remotely from anywhere in Canada. You can complete tasks using your phone or laptop.</p>
-      <p><strong>Estimated daily income:</strong> CAD $30–150 depending on task volume.</p>
+      <img class="job-image" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Work from home illustration">
+      <p>Join our remote team and perform simple online tasks such as data handling, reviews, or customer response. Work anytime, anywhere in Canada.</p>
+      <p><strong>Estimated daily income:</strong> CAD $30–150 depending on completed work.</p>
     </section>
 
     <section>
       <h2>Requirements</h2>
       <ul>
-        <li>Must be 18+ and legally allowed to work in Canada</li>
+        <li>Must be 18+ and legally eligible to work in Canada</li>
         <li>Stable internet connection</li>
         <li>Basic English communication</li>
         <li>Have a WhatsApp account for coordination</li>
@@ -96,15 +114,15 @@
 
     <section>
       <h2>How to Apply</h2>
-      <p>Click the button below to contact our recruitment assistant on WhatsApp.</p>
+      <p>Click the button below to contact our assistant directly on WhatsApp.</p>
       <p><a id="apply-btn" class="apply-btn" href="#" target="_blank" rel="noopener noreferrer">Apply on WhatsApp</a></p>
-      <p><em>No application fees. Direct contact only.</em></p>
+      <p><em>No fees. Direct contact only.</em></p>
     </section>
   </main>
 
   <footer>
-    <p>Disclaimer: Actual income may vary based on performance and task volume.</p>
-    <p>© 2025 Online Recruitment Canada · Privacy-friendly site</p>
+    <p>Disclaimer: This is a sample recruitment page. Actual income depends on task availability and completion quality.</p>
+    <p>© 2025 Online Recruitment Canada · All rights reserved.</p>
   </footer>
 </body>
 </html>
