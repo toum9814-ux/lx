@@ -40,7 +40,7 @@
     }
 
     main {
-      max-width: 850px;
+      max-width: 900px;
       margin: 2rem auto;
       background: #fff;
       padding: 2rem;
@@ -56,8 +56,19 @@
     .job-image {
       display: block;
       width: 100%;
-      border-radius: 8px;
+      border-radius: 10px;
       margin: 1rem 0;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .job-image:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    .clickable {
+      position: relative;
+      cursor: pointer;
     }
 
     .apply-btn {
@@ -108,48 +119,53 @@
 
   <main>
     <section>
-      <h2>Job Overview</h2>
-      <img class="job-image" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Work from home">
-      <p>Join our remote team to perform simple online tasks such as data entry, product reviews, and content evaluation. No experience required — we provide full guidance.</p>
-      <p><strong>Expected daily income:</strong> CAD $30–150 depending on work completed.</p>
-      <a class="apply-btn" href="#" target="_blank">Apply with Assistant 1</a>
+      <h2>Work Opportunities</h2>
+      <a href="#" class="clickable">
+        <img class="job-image" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Work from home">
+      </a>
+      <p>Join our flexible online team for simple digital tasks such as surveys, reviews, and content moderation. We provide full training and support.</p>
+      <a class="apply-btn" href="#">Learn More</a>
     </section>
 
     <section>
-      <h2>Why Work With Us?</h2>
-      <p>We value flexibility and trust. You choose your hours and pace. Our support team ensures you get clear instructions and quick payment processing.</p>
-      <img class="job-image" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Team collaboration">
-      <a class="apply-btn" href="#" target="_blank">Apply with Assistant 2</a>
+      <h2>Why Choose Remote Work?</h2>
+      <a href="#" class="clickable">
+        <img class="job-image" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Team collaboration">
+      </a>
+      <p>Enjoy the freedom to set your own schedule and work from anywhere. Our platform connects you with verified employers offering legitimate part-time work opportunities.</p>
+      <a class="apply-btn" href="#">Explore Openings</a>
     </section>
 
     <section>
-      <h2>Requirements</h2>
-      <ul>
-        <li>Must be 18+ and legally allowed to work in Canada</li>
-        <li>Stable internet connection</li>
-        <li>Basic English communication</li>
-        <li>Have a WhatsApp account for coordination</li>
-      </ul>
-      <a class="apply-btn" href="#" target="_blank">Apply with Assistant 3</a>
+      <h2>Work-Life Balance</h2>
+      <a href="#" class="clickable">
+        <img class="job-image" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Work life balance">
+      </a>
+      <p>Spend more time with your family and maintain your lifestyle while earning online. We value flexibility and trust between workers and our team.</p>
+      <a class="apply-btn" href="#">Get Started</a>
     </section>
 
     <section>
-      <h2>Payment & Benefits</h2>
-      <p>Payments are processed daily or weekly via secure online transfer. Top performers can earn bonuses or priority access to higher-paying tasks.</p>
-      <img class="job-image" src="https://images.unsplash.com/photo-1565372918670-27e0b7c61db9?auto=format&fit=crop&w=800&q=80" alt="Payment and rewards">
-      <a class="apply-btn" href="#" target="_blank">Apply with Assistant 4</a>
+      <h2>Rewards & Payments</h2>
+      <a href="#" class="clickable">
+        <img class="job-image" src="https://images.unsplash.com/photo-1565372918670-27e0b7c61db9?auto=format&fit=crop&w=800&q=80" alt="Rewards">
+      </a>
+      <p>Our platform processes payments securely via direct deposit. Top performers earn bonuses and access to higher-paying roles.</p>
+      <a class="apply-btn" href="#">View Details</a>
     </section>
 
     <section>
-      <h2>Contact Our Team</h2>
-      <p>We’re ready to help you start your remote work journey. Connect directly with one of our verified recruitment assistants below.</p>
-      <a class="apply-btn" href="#" target="_blank">Apply with Assistant 5</a>
-      <p style="text-align:center;margin-top:1rem;"><em>No fees or agents. Direct communication only.</em></p>
+      <h2>Connect With Our Team</h2>
+      <a href="#" class="clickable">
+        <img class="job-image" src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=800&q=80" alt="Customer support">
+      </a>
+      <p>Our dedicated support team is available to answer your questions and guide you through your onboarding process.</p>
+      <a class="apply-btn" href="#">Contact Support</a>
     </section>
   </main>
 
   <footer>
-    <p>Disclaimer: This page is for informational purposes only. Actual income depends on effort and work volume.</p>
+    <p>Disclaimer: This page is for informational purposes only. Replace example links with your official communication or business pages.</p>
     <p>© 2025 WorkLink Canada · All rights reserved.</p>
   </footer>
 </body>
