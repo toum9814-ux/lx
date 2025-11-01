@@ -1,216 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WORK ONLINE | Job Recruitment Canada - CA-2025-PT001</title>
-    <style>
-        /* --- 基础样式和重置 --- */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
-            line-height: 1.5;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px 15px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            text-align: center; /* 保持原页面整体居中对齐的风格 */
-        }
-        
-        /* --- 模块样式 --- */
-        section {
-            padding: 20px 0;
-            border-bottom: 1px solid #eee;
-        }
-        section:last-of-type {
-            border-bottom: none;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Canada Online Part-Time Recruitment</title>
+  <meta name="description" content="Work remotely · Flexible hours · Earn daily income. Join WorkLink Canada." />
+  <style>
+    :root{
+      --brand:#0366d6;
+      --accent:#25d366;
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --muted:#666;
+      --radius:10px;
+      --maxW:960px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background:var(--bg);
+      color:#222;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
 
-        /* --- 标题和文本 --- */
-        h1, h2 {
-            color: #008069; /* 保持一个突出的颜色 */
-            margin-bottom: 15px;
-        }
-        h2 {
-            font-size: 20px;
-        }
-        .recruitment-id {
-            font-weight: bold;
-            color: #666;
-            margin-top: -10px;
-            margin-bottom: 20px;
-        }
-        .job-details ul {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-            max-width: 400px; /* 限制宽度让列表更整洁 */
-            margin: 15px auto;
-        }
-        .job-details ul li {
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-        .job-details ul li:before {
-            content: "✅";
-            margin-right: 8px;
-            color: #25d366;
-        }
+    .container{
+      max-width:var(--maxW);
+      margin:1.6rem auto;
+      padding:0 1rem;
+    }
 
-        /* --- 按钮样式 (CTA) --- */
-        .cta-button {
-            display: block;
-            text-decoration: none;
-            color: #fff;
-            background-color: #25d366; /* WhatsApp 绿色 */
-            padding: 15px;
-            margin: 20px 0;
-            text-align: center;
-            border-radius: 30px;
-            font-size: 18px;
-            font-weight: bold;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s;
-        }
-        .cta-button:hover {
-            background-color: #128c7e;
-        }
-        .red-alert {
-            color: red;
-            font-weight: bold;
-            margin: 15px 0;
-        }
+    header{
+      position:relative;
+      text-align:center;
+      color:white;
+      margin-bottom:1rem;
+    }
+    .hero{
+      width:100%;
+      height:280px;
+      overflow:hidden;
+      border-radius:var(--radius);
+      position:relative;
+    }
+    .hero img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      filter:brightness(62%);
+    }
+    .hero .overlay{
+      position:absolute;
+      inset:0;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:0.25rem;
+    }
+    .hero h1{
+      margin:0;
+      font-size:1.75rem;
+      color:white;
+      letter-spacing:0.2px;
+    }
+    .hero p{
+      margin:0;
+      color:rgba(255,255,255,0.95);
+    }
 
-        /* --- FAQ 样式 --- */
-        .faq p {
-            text-align: left;
-            margin-bottom: 10px;
-        }
-        .faq strong {
-            color: #000;
-        }
+    main{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:1.25rem;
+      box-shadow:0 6px 18px rgba(20,30,50,0.06);
+    }
 
-        /* --- Feedback 样式 --- */
-        .feedback p {
-            text-align: left;
-            padding: 5px 0;
-            border-left: 3px solid #ccc;
-            padding-left: 10px;
-            margin: 10px auto;
-            max-width: 400px;
-        }
-        
-        /* --- 图片样式 --- */
-        .content-image {
-            display: block;
-            width: 100px; /* 设定一个合理的尺寸 */
-            height: auto;
-            margin: 15px auto;
-        }
-        .base64-placeholder {
-            /* 移除原页面的 Base64 占位符，保留对 654.png 的引用 */
-            display: none; 
-        }
+    section.block{
+      margin-bottom:1.6rem;
+    }
 
-        /* --- 底部 --- */
-        .footer {
-            padding-top: 20px;
-            font-size: 12px;
-            color: #999;
-        }
-    </style>
+    section.block h2{
+      color:var(--brand);
+      margin:0 0 .6rem 0;
+      font-size:1.15rem;
+    }
+
+    .img-wrap{
+      border-radius:8px;
+      overflow:hidden;
+      margin:0.6rem 0;
+    }
+    .img-wrap a{display:block}
+    .img-wrap img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      display:block;
+      transition:transform .28s ease, box-shadow .28s ease;
+    }
+    .img-wrap img:focus,
+    .img-wrap img:hover{ transform:scale(1.02); box-shadow:0 8px 22px rgba(10,20,40,0.12); }
+
+    p.lead{ margin:0.5rem 0 0.8rem 0; color:#222; }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      padding:.65rem 1rem;
+      border-radius:8px;
+      text-decoration:none;
+      color:white;
+      background:var(--accent);
+      font-weight:600;
+      box-shadow:0 6px 14px rgba(37,211,102,0.15);
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+    .btn:hover{ transform:translateY(-3px); box-shadow:0 12px 26px rgba(37,211,102,0.18); }
+
+    .muted{ color:var(--muted); font-size:.95rem; }
+
+    footer{
+      margin-top:1rem;
+      text-align:center;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    /* layout for distributed buttons: center in each section */
+    .cta-wrap{ text-align:center; margin-top:.6rem }
+
+    /* responsive */
+    @media (max-width:780px){
+      .hero{ height:200px }
+      .img-wrap img{ height:180px }
+      .hero h1{ font-size:1.35rem }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        
-        <section id="header-cta" style="border-bottom: none;">
-            <h1>WORK ONLINE</h1>
-            <p class="recruitment-id">Job Recruitment Canada<br>Recruitment ID: CA-2025-PT001</p>
-            
-            <a href="https://toum9814-ux.github.io/lx/1.html" class="cta-button">
-                WORK ONLINE
-            </a>
-            
-            <p class="red-alert">📢 Online Part-Time Job (Work From Home)</p>
-        </section>
+  <div class="container">
+    <!-- HERO -->
+    <header>
+      <div class="hero" aria-hidden="false">
+        <!-- hero image (work scene) -->
+        <img src="https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&fit=crop&w=1400&q=80" alt="Remote work - Canada" loading="eager">
+        <div class="overlay" role="banner" aria-label="Site title and subtitle">
+          <h1>Canada Online Part-Time Recruitment</h1>
+          <p>Work remotely · Flexible hours · Earn daily income</p>
+        </div>
+      </div>
+    </header>
 
-        <section id="job-description">
-            <img src="https://toum9814-ux.github.io/lx/654.png" alt="Part-Time Job Icon" class="content-image" loading="lazy">
-            
-            <h2>Part-Time eCommerce Operations Assistant</h2>
-            <p>
-                We are recruiting part-time staff in Canada. Flexible tasks, simple operations, earn extra income daily using your phone.
-            </p>
+    <!-- MAIN CARD -->
+    <main role="main" aria-labelledby="main-heading">
+      <!-- Block 1 -->
+      <section class="block" id="overview">
+        <h2 id="main-heading">Job Overview</h2>
+        <a class="img-wrap" href="#" aria-label="Open Job Overview details (clickable image)">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80" alt="Person working on laptop at home" loading="lazy">
+        </a>
+        <p class="lead">Join our remote team for simple online tasks like data entry, content checks, and surveys. We provide guidance and support — flexible hours to fit your life.</p>
+        <div class="cta-wrap">
+          <!-- replace href="#" with e.g. https://wa.me/1XXXXXXXXXX -->
+          <a id="btn-1" class="btn" href="#" target="_blank" rel="noopener noreferrer" aria-label="Apply via WhatsApp - Assistant 1">Apply with Assistant 1</a>
+        </div>
+      </section>
 
-            <div class="job-details">
-                <ul>
-                    <li>Salary: CAD $30 - $150 per day</li>
-                    <li>No fees required</li>
-                    <li>Payment via Bank Transfer / eWallet (e.g., PayPal, Interac, etc.)</li>
-                    <li>Flexible hours, work anytime</li>
-                </ul>
-            </div>
-            
-            <a href="https://toum9814-ux.github.io/lx/1.html" class="cta-button">
-                Click Here to Apply on WhatsApp
-            </a>
-        </section>
+      <!-- Block 2 -->
+      <section class="block" id="why">
+        <h2>Why Work With Us?</h2>
+        <a class="img-wrap" href="#" aria-label="Why work with us - details">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" alt="Team discussing project" loading="lazy">
+        </a>
+        <p class="lead">Flexible scheduling, prompt payouts, and a supportive team. Our roles are remote-friendly and available across Canada.</p>
+        <div class="cta-wrap">
+          <a id="btn-2" class="btn" href="#" target="_blank" rel="noopener noreferrer" aria-label="Apply via WhatsApp - Assistant 2">Apply with Assistant 2</a>
+        </div>
+      </section>
 
-        <section id="faq" class="faq">
-            <img src="https://toum9814-ux.github.io/lx/654.png" alt="FAQ Icon" class="content-image" loading="lazy">
+      <!-- Block 3 -->
+      <section class="block" id="requirements">
+        <h2>Requirements</h2>
+        <a class="img-wrap" href="#" aria-label="Requirements details">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" alt="Home office setup with laptop and coffee" loading="lazy">
+        </a>
+        <ul class="lead" style="padding-left:1.15rem;">
+          <li>18+ and legally allowed to work in Canada</li>
+          <li>Stable internet connection</li>
+          <li>Basic English communication</li>
+          <li>WhatsApp account for coordination</li>
+        </ul>
+        <div class="cta-wrap">
+          <a id="btn-3" class="btn" href="#" target="_blank" rel="noopener noreferrer" aria-label="Apply via WhatsApp - Assistant 3">Apply with Assistant 3</a>
+        </div>
+      </section>
 
-            <h2>Frequently Asked Questions (FAQ)</h2>
-            
-            <p><strong>Q: Who can apply?</strong></p>
-            <p><strong>A: Age 23+, phone with internet access, able to follow instructions.</strong></p>
+      <!-- Block 4 -->
+      <section class="block" id="payments">
+        <h2>Payment & Benefits</h2>
+        <a class="img-wrap" href="#" aria-label="Payments and benefits">
+          <img src="https://images.unsplash.com/photo-1565372918670-27e0b7c61db9?auto=format&fit=crop&w=1200&q=80" alt="Secure payments illustration" loading="lazy">
+        </a>
+        <p class="lead">Payments processed securely. Top performers earn bonuses and get access to higher-paying tasks.</p>
+        <div class="cta-wrap">
+          <a id="btn-4" class="btn" href="#" target="_blank" rel="noopener noreferrer" aria-label="Apply via WhatsApp - Assistant 4">Apply with Assistant 4</a>
+        </div>
+      </section>
 
-            <p>Q: What kind of job is this?</p>
-            <p>A: Simple online tasks such as product rating, promotion, or engagement.</p>
+      <!-- Block 5 -->
+      <section class="block" id="contact">
+        <h2>Connect With Our Team</h2>
+        <a class="img-wrap" href="#" aria-label="Contact support">
+          <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80" alt="Customer support team" loading="lazy">
+        </a>
+        <p class="lead">Ready to begin? Contact our verified recruitment assistants directly on WhatsApp to get started.</p>
+        <div class="cta-wrap">
+          <a id="btn-5" class="btn" href="#" target="_blank" rel="noopener noreferrer" aria-label="Apply via WhatsApp - Assistant 5">Apply with Assistant 5</a>
+        </div>
+      </section>
+    </main>
 
-            <p>Q: How do I get paid?</p>
-            <p>A: Direct bank transfer or eWallet (Paypal, Interac.etc).</p>
+    <footer>
+      <p class="muted">Disclaimer: Replace example links with your official contact or business pages. No fees or agents.</p>
+      <p class="muted">© 2025 WorkLink Canada · All rights reserved.</p>
+    </footer>
+  </div>
 
-            <p>Q: Do I need to pay anything?</p>
-            <p>A: ❌ No. Joining is completely free.</p>
+  <!-- Optional: small helper script to quickly set WhatsApp numbers in one place.
+       Uncomment and edit the whatsappNumbers array to auto-fill buttons and image links.
+       Example: ['https://wa.me/11234567890', 'https://wa.me/1XXXXXXXXXX', ...] -->
+  <script>
+    /*
+    // Example usage: uncomment, put your numbers, then save file.
+    const whatsappNumbers = [
+      "#", // btn-1
+      "#", // btn-2
+      "#", // btn-3
+      "#", // btn-4
+      "#"  // btn-5
+    ];
 
-            <p>Q: Is this safe?</p>
-            <p>A: Yes, we are working with reliable online platforms. Your income is guaranteed for completed tasks.</p>
-
-            <a href="https://toum9814-ux.github.io/lx/1.html" class="cta-button">
-                Click Here to Apply on WhatsApp
-            </a>
-        </section>
-
-        <section id="feedback" class="feedback">
-            <img src="https://toum9814-ux.github.io/lx/654.png" alt="Feedback Icon" class="content-image" loading="lazy">
-            
-            <h2>💬 Recent Feedback</h2>
-            
-            <p>⭐ "I earned CAD $150 in a day, it’s really easy!" – Aisyah, Toronto</p>
-            <p>⭐ "Perfect side hustle, withdrawals direct to PayPal." – Jason, Vancouver</p>
-            <p>⭐ "Relaxed work, great for stay-at-home parents." – Nurul, Calgary</p>
-            <p>⭐ "Got my first CAD $300 in just 2 days!" – Kelvin, Montreal</p>
-            
-            <a href="https://toum9814-ux.github.io/lx/1.html" class="cta-button">
-                Click Here to Apply on WhatsApp
-            </a>
-        </section>
-
-        <footer class="footer">
-            <p style="color: #333;">#### Capital coming👍*This offer is limited. We accept only serious applicants. We reserve the right to stop applications once slots are full.</p>
-            
-            <div style="margin-top: 15px;">
-                <p>[Contact us]</p>
-                <a href="https://toum9814-ux.github.io/lx/1.html" style="color: #008069; text-decoration: none; font-weight: bold;">SUPPORT</a>
-            </div>
-        </footer>
-
-    </div>
+    // auto-assign
+    whatsappNumbers.forEach((u, i) => {
+      const btn = document.getElementById('btn-' + (i+1));
+      if(btn && u) btn.href = u;
+      // optionally: make images clickable to same link
+      // const imgWrap = document.querySelectorAll('.img-wrap')[i];
+      // if(imgWrap && u) imgWrap.href = u;
+    });
+    */
+  </script>
 </body>
 </html>
+
