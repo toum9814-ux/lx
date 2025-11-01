@@ -1,36 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-  <!-- TikTok Pixel Code Start -->
-<script>
-!function (w, d, t) {
-  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
-;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WhatsApp</title>
+  <script>
+    // 你要跳转的 WhatsApp 链接列表
+    const whatsappLinks = [
+      "https://wa.me/1111111111",
+      "https://wa.me/2222222222",
+      "https://wa.me/3333333333",
+      "https://wa.me/4444444444"
+    ];
 
+    // 随机选择一个链接
+    const randomLink = whatsappLinks[Math.floor(Math.random() * whatsappLinks.length)];
 
-  ttq.load('D42R1A3C77U3U3UTU2QG');
-  ttq.page();
-}(window, document, 'ttq');
-</script>
-<!-- TikTok Pixel Code End -->
+    // 页面加载后自动跳转
+    window.onload = () => {
+      window.location.href = randomLink;
+    };
+  </script>
 </head>
 <body>
-<script>
-  // 定义一个包含多个目标网址的数组
-  var urls = [
-    "https://wa.me/14746644599?text=I want to know about the job content?","https://wa.me/17206309539?text=I want to know about the job content?","https://wa.me/12136458286?text=I want to know about the job content?","https://wa.me/12895313058?text=I want to know about the job content?","https://wa.me/12136537858?text=I want to know about the job content?","https://wa.me/17423748162?text=I want to know about the job content?","https://wa.me/18763931537?text=I want to know about the job content?","https://wa.me/14438384790?text=I want to know about the job content?"
-  ];
-
-  // 生成一个随机的索引
-  var randomIndex = Math.floor(Math.random() * urls.length);
-
-  // 获取随机的网址
-  var randomUrl = urls[randomIndex];
-
-  // 使用 window.location.href 进行跳转
-  window.location.href = randomUrl;
-</script>
-
+  <p></p>
 </body>
 </html>
