@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>个人图床与文字</title>
+<title>个人图床</title>
 
 <style>
 body{background:#f5f6fa;font-family:Arial;margin:0}
@@ -14,31 +14,24 @@ body{background:#f5f6fa;font-family:Arial;margin:0}
 .item img{width:100%;border-radius:6px}
 .btn{background:#1677ff;color:#fff;padding:6px 10px;border:0;border-radius:6px;cursor:pointer;margin:3px}
 .del{background:#ff4d4f}
-input,textarea{width:100%;padding:8px}
+textarea{width:100%;padding:8px}
 </style>
 </head>
 
 <body>
 <div class="wrap">
 
-<!-- 配置 -->
 <div class="card">
-<h3>GitHub 设置</h3>
-<input id="token" placeholder="GitHub Token"><br><br>
-<input id="user" placeholder="用户名"><br><br>
-<input id="repo" placeholder="仓库名 如：pic"><br><br>
-
+<h3>批量上传图片</h3>
 <input type="file" id="file" multiple accept="image/*"><br><br>
-<button class="btn" onclick="upload()">批量上传</button>
+<button class="btn" onclick="upload()">上传</button>
 </div>
 
-<!-- 图片 -->
 <div class="card">
-<h3>图片管理（跨域可用）</h3>
+<h3>图片管理</h3>
 <div class="grid" id="list"></div>
 </div>
 
-<!-- 文字 -->
 <div class="card">
 <h3>文字内容</h3>
 <textarea id="txt" rows="6"></textarea><br>
@@ -48,15 +41,14 @@ input,textarea{width:100%;padding:8px}
 </div>
 
 <script>
-function cfg(){
- return {
-  token:token.value.trim(),
-  user:user.value.trim(),
-  repo:repo.value.trim()
- }
+// ===== 这里改成你的 =====
+const CONFIG = {
+  token: "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",
+  user: "lx",
+  repo: "toum9814-ux"
 }
+// ======================
 
-// 转base64
 function toBase64(f){
  return new Promise(r=>{
   let rd=new FileReader()
@@ -65,9 +57,8 @@ function toBase64(f){
  })
 }
 
-// 上传图片
+// 上传
 async function upload(){
- let c=cfg()
  let fs=file.files
 
  for(let f of fs){
@@ -75,11 +66,11 @@ async function upload(){
   let path="img/"+Date.now()+"_"+f.name
 
   await fetch(
-   `https://api.github.com/repos/${c.user}/${c.repo}/contents/${path}`,
+   `https://api.github.com/repos/${CONFIG.user}/${CONFIG.repo}/contents/${path}`,
    {
     method:"PUT",
     headers:{
-     "Authorization":"token "+c.token,
+     "Authorization":"token "+CONFIG.token,
      "Content-Type":"application/json"
     },
     body:JSON.stringify({
@@ -94,13 +85,100 @@ async function upload(){
  loadImg()
 }
 
-// 读取图片
+// 读取
 async function loadImg(){
- let c=cfg()
 
  let r=await fetch(
-  `https://api.github.com/repos/${c.user}/${c.repo}/contents/img`
+  `https://api.github.com/repos/${CONFIG.user}/${CONFIG.repo}/contents/img`
  )
 
  let ls=await r.json()
- if(!A
+ if(!Array.isArray(ls)) return
+
+ let h=""
+ ls.forEach(it=>{
+
+  let url=
+`https://cdn.jsdelivr.net/gh/${CONFIG.user}/${CONFIG.repo}@main/${it.path}`
+
+  h+=`
+  <div class="item">
+   <img src="${url}">
+   <input value="${url}">
+
+   <button class="btn" onclick="copy(this)">复制</button>
+   <a class="btn" href="${url}" download>下载</a>
+
+   <button class="btn del"
+   onclick="del('${it.path}','${it.sha}')">
+   删除</button>
+  </div>`
+ })
+
+ list.innerHTML=h
+}
+
+function copy(b){
+ let i=b.parentNode.querySelector("input")
+ i.select()
+ document.execCommand("copy")
+ alert("已复制")
+}
+
+// 删除
+async function del(p,sha){
+ if(!confirm("确定删除？"))return
+
+ await fetch(
+ `https://api.github.com/repos/${CONFIG.user}/${CONFIG.repo}/contents/${p}`,
+ {
+  method:"DELETE",
+  headers:{
+   "Authorization":"token "+CONFIG.token,
+   "Content-Type":"application/json"
+  },
+  body:JSON.stringify({
+   message:"del",
+   sha:sha
+  })
+ })
+
+ loadImg()
+}
+
+// 文字
+async function saveText(){
+
+ let content=btoa(unescape(encodeURIComponent(txt.value)))
+
+ let sha=""
+ try{
+  let r=await fetch(
+   `https://api.github.com/repos/${CONFIG.user}/${CONFIG.repo}/contents/text.txt`
+  )
+  let j=await r.json()
+  sha=j.sha
+ }catch(e){}
+
+ await fetch(
+ `https://api.github.com/repos/${CONFIG.user}/${CONFIG.repo}/contents/text.txt`,
+ {
+  method:"PUT",
+  headers:{
+   "Authorization":"token "+CONFIG.token,
+   "Content-Type":"application/json"
+  },
+  body:JSON.stringify({
+   message:"text",
+   content:content,
+   sha:sha
+  })
+ })
+
+ alert("已保存")
+}
+
+loadImg()
+</script>
+</body>
+</html>
