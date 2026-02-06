@@ -3,82 +3,60 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<title>个人GitHub图床</title>
+<title>个人图床与文字</title>
 
 <style>
-body{background:#f5f6fa;font-family:Arial}
-.wrap{max-width:900px;margin:0 auto;padding:15px}
+body{background:#f5f6fa;font-family:Arial;margin:0}
+.wrap{max-width:960px;margin:0 auto;padding:15px}
 .card{background:#fff;padding:15px;border-radius:12px;margin-bottom:12px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
 .item{border:1px solid #eee;padding:6px;border-radius:8px}
 .item img{width:100%;border-radius:6px}
-.btn{background:#1677ff;color:#fff;padding:6px 10px;border:0;border-radius:6px;cursor:pointer}
+.btn{background:#1677ff;color:#fff;padding:6px 10px;border:0;border-radius:6px;cursor:pointer;margin:3px}
 .del{background:#ff4d4f}
-input{width:100%;padding:8px}
+input,textarea{width:100%;padding:8px}
 </style>
 </head>
 
 <body>
 <div class="wrap">
 
+<!-- 配置 -->
 <div class="card">
-<h3>GitHub 图床设置</h3>
-
+<h3>GitHub 设置</h3>
 <input id="token" placeholder="GitHub Token"><br><br>
-<input id="user" placeholder="GitHub 用户名"><br><br>
-<input id="repo" placeholder="仓库名，如：img"><br><br>
+<input id="user" placeholder="用户名"><br><br>
+<input id="repo" placeholder="仓库名 如：pic"><br><br>
 
 <input type="file" id="file" multiple accept="image/*"><br><br>
-
-<button class="btn" onclick="upload()">上传到GitHub</button>
+<button class="btn" onclick="upload()">批量上传</button>
 </div>
 
+<!-- 图片 -->
 <div class="card">
-<h3>图片列表</h3>
+<h3>图片管理（跨域可用）</h3>
 <div class="grid" id="list"></div>
+</div>
+
+<!-- 文字 -->
+<div class="card">
+<h3>文字内容</h3>
+<textarea id="txt" rows="6"></textarea><br>
+<button class="btn" onclick="saveText()">保存文字</button>
 </div>
 
 </div>
 
 <script>
-function get(){
+function cfg(){
  return {
-  token:token.value,
-  user:user.value,
-  repo:repo.value
+  token:token.value.trim(),
+  user:user.value.trim(),
+  repo:repo.value.trim()
  }
 }
 
-// 上传
-async function upload(){
- let cfg=get()
- let fs=file.files
-
- for(let f of fs){
-  let b64=await toBase64(f)
-
-  let path='img/'+Date.now()+'_'+f.name
-
-  await fetch(
-   `https://api.github.com/repos/${cfg.user}/${cfg.repo}/contents/${path}`,
-   {
-    method:'PUT',
-    headers:{
-     'Authorization':'token '+cfg.token,
-     'Content-Type':'application/json'
-    },
-    body:JSON.stringify({
-     message:'upload',
-     content:b64.split(',')[1]
-    })
-   }
-  )
- }
-
- alert('上传完成')
- load()
-}
-
+// 转base64
 function toBase64(f){
  return new Promise(r=>{
   let rd=new FileReader()
@@ -87,66 +65,42 @@ function toBase64(f){
  })
 }
 
-// 读取
-async function load(){
- let cfg=get()
+// 上传图片
+async function upload(){
+ let c=cfg()
+ let fs=file.files
+
+ for(let f of fs){
+  let b64=await toBase64(f)
+  let path="img/"+Date.now()+"_"+f.name
+
+  await fetch(
+   `https://api.github.com/repos/${c.user}/${c.repo}/contents/${path}`,
+   {
+    method:"PUT",
+    headers:{
+     "Authorization":"token "+c.token,
+     "Content-Type":"application/json"
+    },
+    body:JSON.stringify({
+     message:"upload",
+     content:b64.split(",")[1]
+    })
+   }
+  )
+ }
+
+ alert("上传完成")
+ loadImg()
+}
+
+// 读取图片
+async function loadImg(){
+ let c=cfg()
 
  let r=await fetch(
-  `https://api.github.com/repos/${cfg.user}/${cfg.repo}/contents/img`
+  `https://api.github.com/repos/${c.user}/${c.repo}/contents/img`
  )
+
  let ls=await r.json()
-
- let h=''
- ls.forEach(it=>{
-
-  let cdn=
-`https://cdn.jsdelivr.net/gh/${cfg.user}/${cfg.repo}@main/${it.path}`
-
-  h+=`
-  <div class="item">
-   <img src="${cdn}">
-   <input value="${cdn}">
-
-   <button class="btn" onclick="copy(this)">复制</button>
-
-   <button class="btn del"
-   onclick="del('${it.path}','${it.sha}')">
-   删除</button>
-  </div>`
- })
-
- list.innerHTML=h
-}
-
-function copy(b){
- let i=b.parentNode.querySelector('input')
- i.select()
- document.execCommand('copy')
- alert('已复制')
-}
-
-// 删除
-async function del(p,sha){
- if(!confirm('删除?'))return
-
- let cfg=get()
-
- await fetch(
- `https://api.github.com/repos/${cfg.user}/${cfg.repo}/contents/${p}`,
- {
-  method:'DELETE',
-  headers:{
-   'Authorization':'token '+cfg.token,
-   'Content-Type':'application/json'
-  },
-  body:JSON.stringify({
-   message:'del',
-   sha:sha
-  })
- })
-
- load()
-}
-</script>
-</body>
-</html>
+ if(!A
