@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>图片与文字管理</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>个人GitHub图床</title>
 
 <style>
-body{font-family:Arial;background:#f6f6f6;margin:0}
+body{background:#f5f6fa;font-family:Arial}
 .wrap{max-width:900px;margin:0 auto;padding:15px}
-.card{background:#fff;padding:15px;border-radius:10px;margin-bottom:12px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.card{background:#fff;padding:15px;border-radius:12px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
 .item{border:1px solid #eee;padding:6px;border-radius:8px}
 .item img{width:100%;border-radius:6px}
-.btn{display:inline-block;padding:6px 10px;background:#1677ff;color:#fff;border-radius:6px;text-decoration:none;margin:4px 0;border:0;cursor:pointer}
+.btn{background:#1677ff;color:#fff;padding:6px 10px;border:0;border-radius:6px;cursor:pointer}
 .del{background:#ff4d4f}
-textarea{width:100%;height:120px}
+input{width:100%;padding:8px}
 </style>
 </head>
 
@@ -22,78 +22,131 @@ textarea{width:100%;height:120px}
 <div class="wrap">
 
 <div class="card">
-<h3>批量上传图片（本地保存）</h3>
+<h3>GitHub 图床设置</h3>
+
+<input id="token" placeholder="GitHub Token"><br><br>
+<input id="user" placeholder="GitHub 用户名"><br><br>
+<input id="repo" placeholder="仓库名，如：img"><br><br>
+
 <input type="file" id="file" multiple accept="image/*"><br><br>
-<button class="btn" onclick="upload()">上传</button>
+
+<button class="btn" onclick="upload()">上传到GitHub</button>
 </div>
 
 <div class="card">
-<h3>图片管理</h3>
+<h3>图片列表</h3>
 <div class="grid" id="list"></div>
-</div>
-
-<div class="card">
-<h3>文字内容</h3>
-<textarea id="txt"></textarea><br>
-<button class="btn" onclick="saveText()">保存文字</button>
 </div>
 
 </div>
 
 <script>
-// 读取
-function load(){
-  let imgs = JSON.parse(localStorage.getItem('imgs')||'[]')
-  let html = ''
-  imgs.forEach((it,i)=>{
-    html += `
-    <div class="item">
-      <a href="${it}" download="image_${i}.png">
-        <img src="${it}">
-      </a>
-      <button class="btn del" onclick="del(${i})">删除</button>
-    </div>`
-  })
-  document.getElementById('list').innerHTML = html
-
-  document.getElementById('txt').value =
-      localStorage.getItem('text')||''
+function get(){
+ return {
+  token:token.value,
+  user:user.value,
+  repo:repo.value
+ }
 }
 
 // 上传
-function upload(){
-  let f = document.getElementById('file').files
-  let imgs = JSON.parse(localStorage.getItem('imgs')||'[]')
+async function upload(){
+ let cfg=get()
+ let fs=file.files
 
-  Array.from(f).forEach(file=>{
-    let r = new FileReader()
-    r.onload = e=>{
-      imgs.push(e.target.result)
-      localStorage.setItem('imgs',JSON.stringify(imgs))
-      load()
-    }
-    r.readAsDataURL(file)
-  })
+ for(let f of fs){
+  let b64=await toBase64(f)
+
+  let path='img/'+Date.now()+'_'+f.name
+
+  await fetch(
+   `https://api.github.com/repos/${cfg.user}/${cfg.repo}/contents/${path}`,
+   {
+    method:'PUT',
+    headers:{
+     'Authorization':'token '+cfg.token,
+     'Content-Type':'application/json'
+    },
+    body:JSON.stringify({
+     message:'upload',
+     content:b64.split(',')[1]
+    })
+   }
+  )
+ }
+
+ alert('上传完成')
+ load()
+}
+
+function toBase64(f){
+ return new Promise(r=>{
+  let rd=new FileReader()
+  rd.onload=e=>r(e.target.result)
+  rd.readAsDataURL(f)
+ })
+}
+
+// 读取
+async function load(){
+ let cfg=get()
+
+ let r=await fetch(
+  `https://api.github.com/repos/${cfg.user}/${cfg.repo}/contents/img`
+ )
+ let ls=await r.json()
+
+ let h=''
+ ls.forEach(it=>{
+
+  let cdn=
+`https://cdn.jsdelivr.net/gh/${cfg.user}/${cfg.repo}@main/${it.path}`
+
+  h+=`
+  <div class="item">
+   <img src="${cdn}">
+   <input value="${cdn}">
+
+   <button class="btn" onclick="copy(this)">复制</button>
+
+   <button class="btn del"
+   onclick="del('${it.path}','${it.sha}')">
+   删除</button>
+  </div>`
+ })
+
+ list.innerHTML=h
+}
+
+function copy(b){
+ let i=b.parentNode.querySelector('input')
+ i.select()
+ document.execCommand('copy')
+ alert('已复制')
 }
 
 // 删除
-function del(i){
-  if(!confirm('确定删除？')) return
-  let imgs = JSON.parse(localStorage.getItem('imgs')||'[]')
-  imgs.splice(i,1)
-  localStorage.setItem('imgs',JSON.stringify(imgs))
-  load()
-}
+async function del(p,sha){
+ if(!confirm('删除?'))return
 
-// 保存文字
-function saveText(){
-  localStorage.setItem('text',
-    document.getElementById('txt').value)
-  alert('已保存')
-}
+ let cfg=get()
 
-load()
+ await fetch(
+ `https://api.github.com/repos/${cfg.user}/${cfg.repo}/contents/${p}`,
+ {
+  method:'DELETE',
+  headers:{
+   'Authorization':'token '+cfg.token,
+   'Content-Type':'application/json'
+  },
+  body:JSON.stringify({
+   message:'del',
+   sha:sha
+  })
+ })
+
+ load()
+}
 </script>
-
 </body>
 </html>
